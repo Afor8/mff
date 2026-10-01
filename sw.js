@@ -1,8 +1,16 @@
+// Základní Service Worker pro PWA
 self.addEventListener('install', (e) => {
-  console.log('Service Worker instalován');
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (e) => {
+  return self.clients.claim();
 });
 
 self.addEventListener('fetch', (e) => {
-  // Základní obsluha pro PWA
-  e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+  e.respondWith(
+    fetch(e.request).catch(() => {
+      return caches.match(e.request);
+    })
+  );
 });

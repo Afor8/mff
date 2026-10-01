@@ -4,33 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MFF Rozcestník</title>
-  
-  <!-- Moderní font Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
   <style>
     :root {
-      /* Moderní barevná paleta */
       --bg-body: #0f111a;
       --bg-card: #181b26;
       --text-main: #f1f5f9;
       --text-muted: #94a3b8;
       --border-color: #2a2f40;
-
-      /* Barvy tlačítek */
+      
       --color-lecture: #3b82f6;
       --color-lecture-bg: rgba(59, 130, 246, 0.1);
       --color-lecture-hover: rgba(59, 130, 246, 0.2);
-
+      
       --color-seminar: #a855f7;
       --color-seminar-bg: rgba(168, 85, 247, 0.1);
       --color-seminar-hover: rgba(168, 85, 247, 0.2);
-
-      --color-extra: #10b981;
-      --color-extra-bg: rgba(16, 185, 129, 0.1);
-      --color-extra-hover: rgba(16, 185, 129, 0.2);
+      
+      --color-quick: #f59e0b;
+      --color-quick-bg: rgba(245, 158, 11, 0.1);
+      --color-quick-hover: rgba(245, 158, 11, 0.2);
     }
 
     * {
@@ -48,40 +43,16 @@
       flex-direction: column;
       align-items: center;
       padding: 30px 20px;
-      /* Jemný gradient na pozadí */
       background-image: radial-gradient(circle at top right, rgba(59,130,246,0.05), transparent 400px),
                         radial-gradient(circle at bottom left, rgba(168,85,247,0.05), transparent 400px);
     }
 
-    /* Rychlé odkazy nahoře */
     .quick-links {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 30px;
       width: 100%;
       max-width: 1000px;
-      justify-content: flex-end; /* Zarovnání doprava */
-    }
-
-    .quick-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 20px;
-      background-color: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: all 0.2s;
       display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .quick-link:hover {
-      color: var(--text-main);
-      background-color: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
+      gap: 12px;
+      margin-bottom: 24px;
     }
 
     .grid {
@@ -115,6 +86,7 @@
       font-weight: 600;
       margin-bottom: 16px;
       color: #ffffff;
+      line-height: 1.4;
     }
 
     .teachers {
@@ -144,7 +116,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px; /* Mezera pro ikonky */
       padding: 12px 16px;
       text-decoration: none;
       font-weight: 600;
@@ -159,57 +130,46 @@
       color: var(--color-lecture);
       border: 1px solid rgba(59, 130, 246, 0.2);
     }
-
-    .btn-lecture:hover {
-      background-color: var(--color-lecture-hover);
-      border-color: rgba(59, 130, 246, 0.4);
-    }
+    .btn-lecture:hover { background-color: var(--color-lecture-hover); border-color: rgba(59, 130, 246, 0.4); }
 
     .btn-seminar {
       background-color: var(--color-seminar-bg);
       color: var(--color-seminar);
       border: 1px solid rgba(168, 85, 247, 0.2);
     }
+    .btn-seminar:hover { background-color: var(--color-seminar-hover); border-color: rgba(168, 85, 247, 0.4); }
 
-    .btn-seminar:hover {
-      background-color: var(--color-seminar-hover);
-      border-color: rgba(168, 85, 247, 0.4);
+    .btn-quick {
+      background-color: var(--color-quick-bg);
+      color: var(--color-quick);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      flex: initial;
+      padding: 12px 24px;
     }
-
-    .btn-extra {
-      background-color: var(--color-extra-bg);
-      color: var(--color-extra);
-      border: 1px solid rgba(16, 185, 129, 0.2);
-      flex-basis: 100%; /* Roztáhne se na celou šířku, pokud je ve vlastním řádku */
-    }
-
-    .btn-extra:hover {
-      background-color: var(--color-extra-hover);
-      border-color: rgba(16, 185, 129, 0.4);
-    }
+    .btn-quick:hover { background-color: var(--color-quick-hover); border-color: rgba(245, 158, 11, 0.4); }
   </style>
 </head>
 <body>
 
-  <div class="quick-links">
-    <a href="https://is.cuni.cz/studium/rozvrhng/roz_muj_macro.php?id=e293bb484372294cbd945d3c81771e32&tid=" class="quick-link" target="_blank" rel="noopener noreferrer">📅 SIS Rozvrh</a>
-    <a href="https://kam-septim-fe.is.cuni.cz/offer/WEEK" class="quick-link" target="_blank" rel="noopener noreferrer">🍽️ Menza (Jídelníček)</a>
-  </div>
+  <nav class="quick-links">
+    <a href="https://is.cuni.cz/studium/rozvrhng/roz_muj_macro.php?id=e293bb484372294cbd945d3c81771e32&tid=" class="btn btn-quick" target="_blank" rel="noopener noreferrer">SIS</a>
+    <a href="https://kam-septim-fe.is.cuni.cz/offer/WEEK" class="btn btn-quick" target="_blank" rel="noopener noreferrer">Menza</a>
+  </nav>
 
   <main class="grid">
 
-    <!-- 1. Numerika -->
+    <!-- 1. Základy numerické lineární algebry -->
     <article class="card">
       <div class="card-header">
-        <h2>Základy numerické matematiky</h2>
+        <h2>Základy numerické lineární algebry</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> doc. Iveta Hnětynková<br>
-          <strong>Cvičení:</strong> Mgr. Michal Outrata
+          <strong>Přednáška:</strong> doc. RNDr. Iveta Hnětynková, Ph.D., doc. RNDr. Václav Kučera, Ph.D.<br>
+          <strong>Cvičení:</strong> Mgr. Michal Outrata, Ph.D.
         </div>
       </div>
       <div class="actions">
-        <a href="https://pages.karlin.mff.cuni.cz/znm/" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">📚 Přednáška</a>
-        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">📝 Cvičení</a>
+        <a href="https://pages.karlin.mff.cuni.cz/znm/" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
       </div>
     </article>
 
@@ -218,28 +178,28 @@
       <div class="card-header">
         <h2>Matematická analýza 3</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> doc. Miroslav Zelený<br>
-          <strong>Cvičení:</strong> Mgr. Martin Čech
+          <strong>Přednáška:</strong> doc. RNDr. Miroslav Zelený, Ph.D.<br>
+          <strong>Cvičení:</strong> Mgr. Martin Čech, Ph.D.
         </div>
       </div>
       <div class="actions">
-        <a href="https://www.karlin.mff.cuni.cz/~zeleny/mff/MA_3_2026-27/seminar.php" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">📚 Přednáška</a>
-        <a href="https://sites.google.com/site/martinxcech/teaching/matematick%C3%A1-anal%C3%BDza-3" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">📝 Cvičení</a>
+        <a href="https://www.karlin.mff.cuni.cz/~zeleny/mff/MA_3_2026-27/seminar.php" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="https://sites.google.com/site/martinxcech/teaching/matematick%C3%A1-anal%C3%BDza-3" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
       </div>
     </article>
 
-    <!-- 3. Geometrie -->
+    <!-- 3. Geometrie 1 -->
     <article class="card">
       <div class="card-header">
         <h2>Geometrie 1</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> doc. Zbyněk Šír<br>
-          <strong>Cvičení:</strong> doc. Zbyněk Šír
+          <strong>Přednáška:</strong> doc. RNDr. Zbyněk Šír, Ph.D.<br>
+          <strong>Cvičení:</strong> doc. RNDr. Zbyněk Šír, Ph.D.
         </div>
       </div>
       <div class="actions">
-        <a href="https://www.karlin.mff.cuni.cz/~sir/index.php?stranka=vyuka" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">📚 Přednáška</a>
-        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">📝 Cvičení</a>
+        <a href="https://www.karlin.mff.cuni.cz/~sir/index.php?stranka=vyuka" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
       </div>
     </article>
 
@@ -248,73 +208,67 @@
       <div class="card-header">
         <h2>Programování 3</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> RNDr. Martin Pergel<br>
-          <strong>Cvičení:</strong> RNDr. Martin Pergel
+          <strong>Přednáška:</strong> RNDr. Martin Pergel, Ph.D.<br>
+          <strong>Cvičení:</strong> RNDr. Martin Pergel, Ph.D.
         </div>
       </div>
       <div class="actions">
-        <a href="#" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">📚 Přednáška</a>
-        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">📝 Cvičení</a>
-        <a href="https://recodex.mff.cuni.cz/app" class="btn btn-extra" target="_blank" rel="noopener noreferrer">💻 ReCodEx</a>
+        <a href="#" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="https://recodex.mff.cuni.cz/app" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
       </div>
     </article>
 
-    <!-- 5. Počítačové sítě -->
-    <article class="card">
-      <div class="card-header">
-        <h2>Úvod do počítačových sítí</h2>
-        <div class="teachers">
-          <strong>Přednáška:</strong> RNDr. Libor Forst<br>
-          <strong>Cvičení:</strong> (Doplnit)
-        </div>
-      </div>
-      <div class="actions">
-        <a href="https://teaching.ms.mff.cuni.cz/nswi141-web/pages/index" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">📚 Přednáška</a>
-        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">📝 Cvičení</a>
-      </div>
-    </article>
-
-    <!-- 6. Pravděpodobnost -->
+    <!-- 5. Pravděpodobnost -->
     <article class="card">
       <div class="card-header">
         <h2>Pravděpodobnost</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> doc. Daniel Hlubinka<br>
-          <strong>Cvičení:</strong> doc. Stanislav Nagy
+          <strong>Přednáška:</strong> doc. RNDr. Daniel Hlubinka, Ph.D.<br>
+          <strong>Cvičení:</strong> doc. Mgr. Stanislav Nagy, Ph.D.
         </div>
       </div>
       <div class="actions">
-        <a href="#" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">📚 Přednáška</a>
-        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">📝 Cvičení</a>
+        <a href="#" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
       </div>
     </article>
 
-    <!-- 7. Principy statistického myšlení -->
+    <!-- 6. Principy statistického myšlení -->
     <article class="card">
       <div class="card-header">
-        <h2>Principy statist. myšlení</h2>
+        <h2>Principy statistického myšlení</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> (Doplnit)<br>
-          <strong>Cvičení:</strong> doc. Jiří Dvořák
+          <strong>Cvičení:</strong> doc. RNDr. Jiří Dvořák, Ph.D.
         </div>
       </div>
       <div class="actions">
-        <a href="#" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">📚 Přednáška</a>
-        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">📝 Cvičení</a>
+        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer" style="flex-basis: 100%;">Cvičení</a>
       </div>
     </article>
 
-    <!-- 8. Matematické problémy nematematiků -->
+    <!-- 7. Úvod do počítačových sítí (Seminář, na konci) -->
     <article class="card">
       <div class="card-header">
-        <h2>Matematické problémy</h2>
+        <h2>Úvod do počítačových sítí</h2>
         <div class="teachers">
-          <strong>Seminář:</strong> doc. Iveta Hnětynková
+          <strong>Přednáška:</strong> RNDr. Libor Forst, Mgr. Klára Pešková, Ph.D.
         </div>
       </div>
       <div class="actions">
-        <!-- Zde se tlačítko automaticky roztáhne přes celou šířku, protože je samo ve flex kontejneru -->
-        <a href="https://www2.karlin.mff.cuni.cz/mffseminar/" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">🗣️ Seminář</a>
+        <a href="https://teaching.ms.mff.cuni.cz/nswi141-web/pages/index" class="btn btn-seminar" target="_blank" rel="noopener noreferrer" style="flex-basis: 100%;">Seminář</a>
+      </div>
+    </article>
+
+    <!-- 8. Matematické problémy nematematiků (Seminář, na konci) -->
+    <article class="card">
+      <div class="card-header">
+        <h2>Matematické problémy nematematiků</h2>
+        <div class="teachers">
+          <strong>Cvičení:</strong> doc. RNDr. Iveta Hnětynková, Ph.D.
+        </div>
+      </div>
+      <div class="actions">
+        <a href="https://www2.karlin.mff.cuni.cz/mffseminar/" class="btn btn-seminar" target="_blank" rel="noopener noreferrer" style="flex-basis: 100%;">Seminář</a>
       </div>
     </article>
 

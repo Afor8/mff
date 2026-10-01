@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MFF Rozcestník</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0d1117;
+      color: #e6edf3;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+    }
+    .grid {
+      width: 100%;
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .card-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #58a6ff;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .teachers {
+      font-size: 0.85rem;
+      color: #8b949e;
+      line-height: 1.45;
+    }
+    .teachers strong {
+      color: #c9d1d9;
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .actions.single {
+      grid-template-columns: 1fr;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+      background-color: #21262d;
+      color: #f0f6fc;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: 1px solid #363b42;
+      touch-action: manipulation;
+      user-select: none;
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+    .btn:active {
+      background-color: #30363d;
+      border-color: #8b949e;
+    }
+    .btn-lecture {
+      border-bottom: 3px solid #f78166;
+    }
+    .btn-seminar {
+      border-bottom: 3px solid #79c0ff;
+    }
+    .btn-single {
+      border-bottom: 3px solid #2ea043;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="grid">
+
+    <!-- 1. Numerika -->
+    <article class="card">
+      <div class="card-header">
+        <h2>Základy numerické matematiky</h2>
+        <p class="teachers">
+          <strong>Přednáška:</strong> J. Málek / Z. Strakoš<br>
+          <strong>Cvičení:</strong> (Doplnit)
+        </p>
+      </div>
+      <div class="actions">
+        <a href="https://pages.karlin.mff.cuni.cz/znm/" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
+      </div>
+    </article>
+
+    <!-- 2. Matematická analýza 3 -->
+    <article class="card">
+      <div class="card-header">
+        <h2>Matematická analýza 3</h2>
+        <p class="teachers">
+          <strong>Přednáška:</strong> M. Zelený<br>
+          <strong>Cvičení:</strong> M. Čech
+        </p>
+      </div>
+      <div class="actions">
+        <a href="https://www.karlin.mff.cuni.cz/~zeleny/mff/MA_3_2026-27/seminar.php" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="https://sites.google.com/site/martinxcech/teaching/matematick%C3%A1-anal%C3%BDza-3" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
+      </div>
+    </article>
+
+    <!-- 3. Geometrie -->
+    <article class="card">
+      <div class="card-header">
+        <h2>Geometrie</h2>
+        <p class="teachers">
+          <strong>Přednáška:</strong> Z. Šír<br>
+          <strong>Cvičení:</strong> (Doplnit)
+        </p>
+      </div>
+      <div class="actions">
+        <a href="https://www.karlin.mff.cuni.cz/~sir/index.php?stranka=vyuka" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
+      </div>
+    </article>
+
+    <!-- 4. Úvod do tvorby webu -->
+    <article class="card">
+      <div class="card-header">
+        <h2>Úvod do tvorby webu</h2>
+        <p class="teachers">
+          <strong>Přednáška:</strong> (Doplnit)<br>
+          <strong>Cvičení:</strong> (Doplnit)
+        </p>
+      </div>
+      <div class="actions">
+        <a href="https://teaching.ms.mff.cuni.cz/nswi141-web/pages/index" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
+      </div>
+    </article>
+
+    <!-- 5. Programování / ReCodEx -->
+    <article class="card">
+      <div class="card-header">
+        <h2>Programování</h2>
+        <p class="teachers">
+          <strong>Systém:</strong> ReCodEx
+        </p>
+      </div>
+      <div class="actions single">
+        <a href="https://recodex.mff.cuni.cz/app" class="btn btn-single" target="_blank" rel="noopener noreferrer">ReCodEx</a>
+      </div>
+    </article>
+
+    <!-- 6. Pravděpodobnost a statistika -->
+    <article class="card">
+      <div class="card-header">
+        <h2>Pravděpodobnost</h2>
+        <p class="teachers">
+          <strong>Přednáška:</strong> (Doplnit)<br>
+          <strong>Cvičení:</strong> (Doplnit)
+        </p>
+      </div>
+      <div class="actions">
+        <a href="#" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
+      </div>
+    </article>
+
+    <!-- 7. Sedmý předmět (šablona k doplnění) -->
+    <article class="card">
+      <div class="card-header">
+        <h2>Další předmět</h2>
+        <p class="teachers">
+          <strong>Přednáška:</strong> (Doplnit)<br>
+          <strong>Cvičení:</strong> (Doplnit)
+        </p>
+      </div>
+      <div class="actions">
+        <a href="#" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
+      </div>
+    </article>
+
+  </main>
+
+</body>
+</html>

@@ -9,143 +9,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-body: #0f111a;
-      --bg-card: #181b26;
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --border-color: #2a2f40;
-      
-      --color-lecture: #3b82f6;
-      --color-lecture-bg: rgba(59, 130, 246, 0.1);
-      --color-lecture-hover: rgba(59, 130, 246, 0.2);
-      
-      --color-seminar: #a855f7;
-      --color-seminar-bg: rgba(168, 85, 247, 0.1);
-      --color-seminar-hover: rgba(168, 85, 247, 0.2);
-      
-      --color-quick: #f59e0b;
-      --color-quick-bg: rgba(245, 158, 11, 0.1);
-      --color-quick-hover: rgba(245, 158, 11, 0.2);
+      --bg-body: #0f111a; --bg-card: #181b26; --text-main: #f1f5f9; --text-muted: #94a3b8; --border-color: #2a2f40;
+      --color-lecture: #3b82f6; --color-lecture-bg: rgba(59, 130, 246, 0.1); --color-lecture-hover: rgba(59, 130, 246, 0.2);
+      --color-seminar: #a855f7; --color-seminar-bg: rgba(168, 85, 247, 0.1); --color-seminar-hover: rgba(168, 85, 247, 0.2);
+      --color-quick: #f59e0b; --color-quick-bg: rgba(245, 158, 11, 0.1); --color-quick-hover: rgba(245, 158, 11, 0.2);
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-body);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px;
+      font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main);
+      min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 30px 20px;
       background-image: radial-gradient(circle at top right, rgba(59,130,246,0.05), transparent 400px),
                         radial-gradient(circle at bottom left, rgba(168,85,247,0.05), transparent 400px);
     }
-
-    .quick-links {
-      width: 100%;
-      max-width: 1000px;
-      display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .grid {
-      width: 100%;
-      max-width: 1000px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
+    .quick-links { width: 100%; max-width: 1000px; display: flex; gap: 12px; margin-bottom: 24px; }
+    .grid { width: 100%; max-width: 1000px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
     .card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      transition: all 0.3s ease;
+      background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px;
+      padding: 24px; display: flex; flex-direction: column; gap: 20px; transition: all 0.3s ease;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .card-header h2 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: #ffffff;
-      line-height: 1.4;
-    }
-
+    .card:hover { transform: translateY(-5px); border-color: rgba(255, 255, 255, 0.15); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
+    .card-header h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 16px; color: #ffffff; line-height: 1.4; }
     .teachers {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      background: rgba(0, 0, 0, 0.25);
-      padding: 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.03);
+      font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; background: rgba(0, 0, 0, 0.25);
+      padding: 14px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.03);
     }
-
-    .teachers strong {
-      color: #cbd5e1;
-      font-weight: 600;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      margin-top: auto;
-      flex-wrap: wrap;
-    }
-
+    .teachers strong { color: #cbd5e1; font-weight: 600; }
+    .actions { display: flex; gap: 12px; margin-top: auto; flex-wrap: wrap; }
     .btn {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 16px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border-radius: 12px;
-      transition: all 0.2s ease;
-      text-align: center;
+      flex: 1; display: flex; align-items: center; justify-content: center; padding: 12px 16px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem; border-radius: 12px;
+      transition: all 0.2s ease; text-align: center;
     }
-
-    .btn-lecture {
-      background-color: var(--color-lecture-bg);
-      color: var(--color-lecture);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
+    .btn-lecture { background-color: var(--color-lecture-bg); color: var(--color-lecture); border: 1px solid rgba(59, 130, 246, 0.2); }
     .btn-lecture:hover { background-color: var(--color-lecture-hover); border-color: rgba(59, 130, 246, 0.4); }
-
-    .btn-seminar {
-      background-color: var(--color-seminar-bg);
-      color: var(--color-seminar);
-      border: 1px solid rgba(168, 85, 247, 0.2);
-    }
+    .btn-seminar { background-color: var(--color-seminar-bg); color: var(--color-seminar); border: 1px solid rgba(168, 85, 247, 0.2); }
     .btn-seminar:hover { background-color: var(--color-seminar-hover); border-color: rgba(168, 85, 247, 0.4); }
-
-    .btn-quick {
-      background-color: var(--color-quick-bg);
-      color: var(--color-quick);
-      border: 1px solid rgba(245, 158, 11, 0.2);
-      flex: initial;
-      padding: 12px 24px;
-    }
+    .btn-quick { background-color: var(--color-quick-bg); color: var(--color-quick); border: 1px solid rgba(245, 158, 11, 0.2); flex: initial; padding: 12px 24px; }
     .btn-quick:hover { background-color: var(--color-quick-hover); border-color: rgba(245, 158, 11, 0.4); }
   </style>
 </head>
@@ -158,13 +58,12 @@
 
   <main class="grid">
 
-    <!-- 1. Základy numerické lineární algebry -->
     <article class="card">
       <div class="card-header">
         <h2>Základy numerické lineární algebry</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> doc. RNDr. Iveta Hnětynková, Ph.D., doc. RNDr. Václav Kučera, Ph.D.<br>
-          <strong>Cvičení:</strong> Mgr. Michal Outrata, Ph.D.
+          <strong>Přednáška:</strong> Hnětynková, Kučera<br>
+          <strong>Cvičení:</strong> Outrata
         </div>
       </div>
       <div class="actions">
@@ -173,13 +72,12 @@
       </div>
     </article>
 
-    <!-- 2. Matematická analýza 3 -->
     <article class="card">
       <div class="card-header">
         <h2>Matematická analýza 3</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> doc. RNDr. Miroslav Zelený, Ph.D.<br>
-          <strong>Cvičení:</strong> Mgr. Martin Čech, Ph.D.
+          <strong>Přednáška:</strong> Zelený<br>
+          <strong>Cvičení:</strong> Čech
         </div>
       </div>
       <div class="actions">
@@ -188,13 +86,12 @@
       </div>
     </article>
 
-    <!-- 3. Geometrie 1 -->
     <article class="card">
       <div class="card-header">
         <h2>Geometrie 1</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> doc. RNDr. Zbyněk Šír, Ph.D.<br>
-          <strong>Cvičení:</strong> doc. RNDr. Zbyněk Šír, Ph.D.
+          <strong>Přednáška:</strong> Šír<br>
+          <strong>Cvičení:</strong> Šír
         </div>
       </div>
       <div class="actions">
@@ -203,13 +100,12 @@
       </div>
     </article>
 
-    <!-- 4. Programování 3 -->
     <article class="card">
       <div class="card-header">
         <h2>Programování 3</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> RNDr. Martin Pergel, Ph.D.<br>
-          <strong>Cvičení:</strong> RNDr. Martin Pergel, Ph.D.
+          <strong>Přednáška:</strong> Pergel<br>
+          <strong>Cvičení:</strong> Pergel
         </div>
       </div>
       <div class="actions">
@@ -218,13 +114,12 @@
       </div>
     </article>
 
-    <!-- 5. Pravděpodobnost -->
     <article class="card">
       <div class="card-header">
         <h2>Pravděpodobnost</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> doc. RNDr. Daniel Hlubinka, Ph.D.<br>
-          <strong>Cvičení:</strong> doc. Mgr. Stanislav Nagy, Ph.D.
+          <strong>Přednáška:</strong> Hlubinka<br>
+          <strong>Cvičení:</strong> Nagy
         </div>
       </div>
       <div class="actions">
@@ -233,12 +128,11 @@
       </div>
     </article>
 
-    <!-- 6. Principy statistického myšlení -->
     <article class="card">
       <div class="card-header">
         <h2>Principy statistického myšlení</h2>
         <div class="teachers">
-          <strong>Cvičení:</strong> doc. RNDr. Jiří Dvořák, Ph.D.
+          <strong>Cvičení:</strong> Dvořák
         </div>
       </div>
       <div class="actions">
@@ -246,12 +140,11 @@
       </div>
     </article>
 
-    <!-- 7. Úvod do počítačových sítí (Seminář, na konci) -->
     <article class="card">
       <div class="card-header">
         <h2>Úvod do počítačových sítí</h2>
         <div class="teachers">
-          <strong>Přednáška:</strong> RNDr. Libor Forst, Mgr. Klára Pešková, Ph.D.
+          <strong>Přednáška:</strong> Forst, Pešková
         </div>
       </div>
       <div class="actions">
@@ -259,12 +152,11 @@
       </div>
     </article>
 
-    <!-- 8. Matematické problémy nematematiků (Seminář, na konci) -->
     <article class="card">
       <div class="card-header">
         <h2>Matematické problémy nematematiků</h2>
         <div class="teachers">
-          <strong>Cvičení:</strong> doc. RNDr. Iveta Hnětynková, Ph.D.
+          <strong>Cvičení:</strong> Hnětynková
         </div>
       </div>
       <div class="actions">

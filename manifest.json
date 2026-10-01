@@ -2,7 +2,7 @@
   "name": "MFF Rozcestník",
   "short_name": "Rozcestník",
   "start_url": "./index.html",
-  "display": "standalone",
+  "display": "minimal-ui",
   "background_color": "#0f111a",
   "theme_color": "#0f111a",
   "icons": [

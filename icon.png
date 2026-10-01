@@ -1,0 +1,14 @@
+<svg viewBox="0 0 512 512" width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1"></stop>
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1"></stop>
+    </linearGradient>
+  </defs>
+  <!-- Pozadí se zaoblenými rohy -->
+  <rect width="512" height="512" rx="110" fill="#0f111a"></rect>
+  <!-- Vnitřní rámček s přechodem -->
+  <rect x="24" y="24" width="464" height="464" rx="90" fill="url(#grad)" opacity="0.15"></rect>
+  <!-- Písmeno M -->
+  <text x="50%" y="54%" font-family="'Inter', sans-serif, system-ui" font-size="240" font-weight="700" fill="url(#grad)" text-anchor="middle" dominant-baseline="middle">M</text>
+</svg>

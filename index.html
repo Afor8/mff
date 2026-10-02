@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta name="mobile-web-app-capable" content="yes">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MFF Rozcestník</title>
   <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -80,8 +80,6 @@
   </div>
 
   <main class="grid" id="mainGrid">
-
-    <!-- dny: 1=Po, 2=Út, 3=St, 4=Čt, 5=Pá -->
     
     <article class="card" data-day="3,5">
       <div class="card-header">
@@ -93,7 +91,7 @@
       </div>
       <div class="actions">
         <a href="https://pages.karlin.mff.cuni.cz/znm/" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
-        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
+        <a href="https://pages.karlin.mff.cuni.cz/znm/cviceni-student/" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
       </div>
     </article>
 
@@ -148,7 +146,7 @@
         </div>
       </div>
       <div class="actions">
-        <a href="#" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
+        <a href="skripta.pdf" class="btn btn-lecture" target="_blank" rel="noopener noreferrer">Přednáška</a>
         <a href="https://www.karlin.mff.cuni.cz/~nagy/teaching/2026-ZS/" class="btn btn-seminar" target="_blank" rel="noopener noreferrer">Cvičení</a>
       </div>
     </article>
@@ -161,7 +159,7 @@
         </div>
       </div>
       <div class="actions">
-        <a href="#" class="btn btn-seminar" target="_blank" rel="noopener noreferrer" style="flex-basis: 100%;">Seminář</a>
+        <a href="https://www.karlin.mff.cuni.cz/~dvorak/teaching/2026_2027/teaching_2026_2027.html" class="btn btn-seminar" target="_blank" rel="noopener noreferrer" style="flex-basis: 100%;">Seminář</a>
       </div>
     </article>
 
@@ -193,7 +191,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Zpracování týdne (začátek ZS: 1. 10. 2026)
       const startDate = new Date('2026-10-01T00:00:00');
       const now = new Date();
       const diffTime = now - startDate;
@@ -213,7 +210,6 @@
         indicator.textContent = 'Před semestrem';
       }
 
-      // 2. Fyzické řazení karet v HTML podle dne (0 = Neděle, 1 = Pondělí... 6 = Sobota)
       const currentDay = now.getDay().toString();
       const grid = document.getElementById('mainGrid');
       const cards = document.querySelectorAll('.card');
@@ -231,20 +227,10 @@
         }
       });
 
-      // Vymažeme grid a vložíme zpět nejdřív dnešní, pak zbytek
       grid.innerHTML = '';
       todayCards.forEach(card => grid.appendChild(card));
       otherCards.forEach(card => grid.appendChild(card));
     });
   </script>
-  <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(reg => console.log('Service Worker zaregistrován!', reg))
-        .catch(err => console.log('Registrace SW selhala:', err));
-    });
-  }
-</script>
 </body>
 </html>
